@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-15T15:10:43 IST" name="Suite" finished-at="2024-02-15T15:11:45 IST" duration-ms="61512">
+    <groups>
+    </groups>
+    <test started-at="2024-02-15T15:10:43 IST" name="Test" finished-at="2024-02-15T15:11:45 IST" duration-ms="61512">
+      <class name="com.opencart.tests.LoginTest">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:10:44 IST" name="beforeMethod" finished-at="2024-02-15T15:10:56 IST" duration-ms="11728" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testLoginLinkDisplay()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:10:56 IST" name="testLoginLinkDisplay" finished-at="2024-02-15T15:10:56 IST" duration-ms="403" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginLinkDisplay -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:10:56 IST" name="afterMethod" finished-at="2024-02-15T15:10:56 IST" duration-ms="406" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:10:58 IST" name="beforeMethod" finished-at="2024-02-15T15:11:07 IST" duration-ms="8792" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginWithTrueEmailAndTruePassword(java.lang.String,java.lang.String)[pri:1, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:07 IST" name="loginWithTrueEmailAndTruePassword" data-provider="valid_email_password" finished-at="2024-02-15T15:11:09 IST" duration-ms="2181" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sony@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sony@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithTrueEmailAndTruePassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:09 IST" name="afterMethod" finished-at="2024-02-15T15:11:09 IST" duration-ms="320" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:09 IST" name="beforeMethod" finished-at="2024-02-15T15:11:18 IST" duration-ms="8701" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginWithTrueEmailAndFalsePassword(java.lang.String,java.lang.String)[pri:2, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:18 IST" name="loginWithTrueEmailAndFalsePassword" data-provider="valid_email_invalid_password" finished-at="2024-02-15T15:11:20 IST" duration-ms="1778" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sony@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sony@1234]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithTrueEmailAndFalsePassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:20 IST" name="afterMethod" finished-at="2024-02-15T15:11:20 IST" duration-ms="443" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:21 IST" name="beforeMethod" finished-at="2024-02-15T15:11:30 IST" duration-ms="9041" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginWithFalseEmailAndTruePassword(java.lang.String,java.lang.String)[pri:3, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:30 IST" name="loginWithFalseEmailAndTruePassword" data-provider="invalid_email_valid_password" finished-at="2024-02-15T15:11:32 IST" duration-ms="1901" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abc@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sony@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithFalseEmailAndTruePassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:32 IST" name="afterMethod" finished-at="2024-02-15T15:11:32 IST" duration-ms="308" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:32 IST" name="beforeMethod" finished-at="2024-02-15T15:11:43 IST" duration-ms="10491" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginWithFalseEmailAndFalsePassword(java.lang.String,java.lang.String)[pri:4, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:43 IST" name="loginWithFalseEmailAndFalsePassword" data-provider="invalid_email_password" finished-at="2024-02-15T15:11:44 IST" duration-ms="1850" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[xyz@yahoo.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[xyz@12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithFalseEmailAndFalsePassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-02-15T15:11:44 IST" name="afterMethod" finished-at="2024-02-15T15:11:45 IST" duration-ms="422" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.opencart.tests.LoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

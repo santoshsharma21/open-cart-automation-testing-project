@@ -17,7 +17,7 @@ import com.opencart.utilities.TestUtils;
  *
  */
 public class HomePage {
-	
+
 	// initialize driver
 	WebDriver driver;
 
@@ -27,16 +27,24 @@ public class HomePage {
 
 	@FindBy(xpath = "//ul[@class='dropdown-menu dropdown-menu-right']/li")
 	private List<WebElement> accountOptions;
-	
+
 	// constructor
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	// action methods
 	public void clickMyAccount() {
-		myAccountLink.click();
+		TestUtils.performClick(myAccountLink);
+	}
+
+	public boolean isRegisterLinkDisplayed() {
+		return TestUtils.isLinkTextDisplayed(accountOptions, "Register");
+	}
+
+	public boolean isLoginLinkDisplayed() {
+		return TestUtils.isLinkTextDisplayed(accountOptions, "Login");
 	}
 
 	public LoginPage selectLogin() {

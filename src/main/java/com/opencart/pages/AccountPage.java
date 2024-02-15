@@ -8,7 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.eshop.pages.LogoutPage;
+import com.opencart.utilities.TestUtils;
+
 
 /**
  * @author Santosh Sharma
@@ -30,21 +31,12 @@ public class AccountPage {
 	}
 	
 	// action methods
-	public boolean validateLogin() {
-		String expectedUrl = "https://tutorialsninja.com/demo/index.php?route=account/account";
-		boolean status = false;
-		if (expectedUrl.equals(driver.getCurrentUrl())) {
-			status = true;
-		}
-		return status;
-	}
-
-	public String tempvalidateLogin() {
+	public String getUrl() {
 		return driver.getCurrentUrl();
 	}
-
-	public LogoutPage clickLogout() {
-		logoutLinkTxt.click();
-		return new LogoutPage(driver);
-	}
+	
+//	public LogoutPage clickLogout() {
+//		TestUtils.performClick(logoutLinkTxt);
+//		return new LogoutPage(driver);
+//	}
 }

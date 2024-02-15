@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.eshop.pages.AccountPage;
+import com.opencart.utilities.TestUtils;
 
 /**
  * @author Santosh Sharma
@@ -21,16 +21,16 @@ public class LoginPage {
 	
 	// page objects
 	@FindBy(id = "input-email")
-	WebElement emailTextBox;
+	private WebElement emailTextBox;
 
 	@FindBy(id = "input-password")
-	WebElement passwordTextBox;
+	private WebElement passwordTextBox;
 
 	@FindBy(xpath = "//input[@value='Login']")
-	WebElement loginBtn;
+	private WebElement loginBtn;
 	
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
-	WebElement errorTxt;
+	private WebElement errorTxt;
 
 	// constructor
 	public LoginPage(WebDriver driver) {
@@ -39,16 +39,20 @@ public class LoginPage {
 	}
 	
 	// action methods
-	public AccountPage performLogin(String email, String password) {
-		emailTextBox.clear();
-		emailTextBox.sendKeys(email);
-		passwordTextBox.clear();
-		passwordTextBox.sendKeys(password);
-		loginBtn.click();
+	public AccountPage performLoginWithValidData(String email, String password) {
+		TestUtils.performSendKey(emailTextBox, email);
+		TestUtils.performSendKey(passwordTextBox, password);
+		TestUtils.performClick(loginBtn);
 		return new AccountPage(driver);
 	}
 	
+	public void performLoginWithInvalidData(String email, String password) {
+		TestUtils.performSendKey(emailTextBox, email);
+		TestUtils.performSendKey(passwordTextBox, password);
+		TestUtils.performClick(loginBtn);
+	}
+	
 	public String getErrorMessage() {
-		return errorTxt.getText();
+		return TestUtils.getInnerText(errorTxt);
 	}
 }
