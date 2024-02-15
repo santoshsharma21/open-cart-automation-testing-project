@@ -1,10 +1,12 @@
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\extentreport\ListenerClass.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\utilities\ConfigReader.java
+A:\AutomationProjects_java\opencart\src\main\java\com\opencart\utilities\ExcelUtils.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\extentreport\ExtentReportManager.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\utilities\TestUtils.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\pages\RegisterPage.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\pages\AccountPage.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\pages\LoginPage.java
+A:\AutomationProjects_java\opencart\src\main\java\com\opencart\pages\LogoutPage.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\pages\RegistrationSuccessPage.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\pages\HomePage.java
 A:\AutomationProjects_java\opencart\src\main\java\com\opencart\base\BaseClass.java
