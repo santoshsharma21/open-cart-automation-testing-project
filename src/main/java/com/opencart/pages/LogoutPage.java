@@ -15,7 +15,7 @@ import com.opencart.utilities.TestUtils;
  */
 public class LogoutPage {
 
-	// webdriver
+	// initialize webdriver
 	WebDriver driver;
 
 	// page objects

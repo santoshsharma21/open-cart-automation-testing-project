@@ -58,7 +58,17 @@ public class TestUtils {
 	public static String getInnerText(WebElement element) {
 		return element.getText();
 	}
-
+	
+	// return attribute value
+	public static String getAttributeValue(WebElement element, String attributeName) {
+		return element.getAttribute(attributeName);
+	}
+	
+	// checks element dispaly
+	public static boolean performIsDispalyed(WebElement element) {
+		return element.isDisplayed();
+	}
+	
 	// method takes screenshot
 	public static String captureScreen(String testName, WebDriver driver) throws IOException {
 		String dt = new SimpleDateFormat("dd.MM.yyyy_hh.mm.ss").format(new Date());

@@ -27,6 +27,12 @@ public class HomePage {
 
 	@FindBy(xpath = "//ul[@class='dropdown-menu dropdown-menu-right']/li")
 	private List<WebElement> accountOptions;
+	
+	@FindBy(name = "search")
+	private WebElement searchTxtBox;
+	
+	@FindBy(xpath = "//button[@class='btn btn-default btn-lg']")
+	private WebElement searchBtn;
 
 	// constructor
 	public HomePage(WebDriver driver) {
@@ -55,5 +61,11 @@ public class HomePage {
 	public RegisterPage selectRegister() {
 		TestUtils.selectByVisibleTxt(accountOptions, "Register");
 		return new RegisterPage(driver);
+	}
+	
+	public SearchPage searchProduct(String productName) {
+		TestUtils.performSendKey(searchTxtBox, productName);
+		TestUtils.performClick(searchBtn);
+		return new SearchPage(driver);
 	}
 }
