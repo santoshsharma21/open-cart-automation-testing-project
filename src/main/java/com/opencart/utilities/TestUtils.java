@@ -78,7 +78,12 @@ public class TestUtils {
 		TakesScreenshot scrshot = (TakesScreenshot) driver;
 		File sourceFile = scrshot.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(sourceFile, new File(destFile));
-		return destFile;
+		
+		// for jenkins
+		String pathReportJenkins = "http://localhost:8080/job/opencart/ws/screenshots/" + scrName;
+		
+		//return destFile;
+		return pathReportJenkins;
 	}
 	
 	// method generate random ten digit num
