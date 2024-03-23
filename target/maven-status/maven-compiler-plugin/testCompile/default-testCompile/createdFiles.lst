@@ -1,4 +1,5 @@
 com\opencart\dataprovider\TestDataProvider.class
 com\opencart\tests\LogoutTest.class
+com\opencart\tests\SearchTest.class
 com\opencart\tests\RegisterTest.class
 com\opencart\tests\LoginTest.class

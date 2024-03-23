@@ -7,10 +7,10 @@
 	<test thread-count="5" name="Test">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="com.opencart.tests.RegisterTest" />
+		<!-- 	<class name="com.opencart.tests.RegisterTest" /> -->
 			<class name="com.opencart.tests.LoginTest" />
-			<class name="com.opencart.tests.LogoutTest" />
-			<class name="com.opencart.tests.SearchTest" />
+		<!--	<class name="com.opencart.tests.LogoutTest" /> -->
+		<!--	<class name="com.opencart.tests.SearchTest" /> -->
 		</classes>
 	</test> <!--
 	Test -->

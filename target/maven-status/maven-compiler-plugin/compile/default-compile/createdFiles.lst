@@ -1,12 +1,13 @@
+com\opencart\pages\LogoutPage.class
+com\opencart\extentreport\ExtentReportManager.class
+com\opencart\pages\RegistrationSuccessPage.class
+com\opencart\utilities\TestUtils.class
 com\opencart\pages\RegisterPage.class
 com\opencart\utilities\ExcelUtils.class
 com\opencart\pages\LoginPage.class
+com\opencart\pages\SearchPage.class
 com\opencart\base\BaseClass.class
 com\opencart\pages\AccountPage.class
-com\opencart\pages\LogoutPage.class
 com\opencart\extentreport\ListenerClass.class
 com\opencart\pages\HomePage.class
-com\opencart\extentreport\ExtentReportManager.class
-com\opencart\pages\RegistrationSuccessPage.class
 com\opencart\utilities\ConfigReader.class
-com\opencart\utilities\TestUtils.class

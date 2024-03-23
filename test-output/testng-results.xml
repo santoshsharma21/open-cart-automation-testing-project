@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-18T16:27:10 IST" name="Suite" finished-at="2024-02-18T16:28:21 IST" duration-ms="70879">
+  <suite started-at="2024-03-23T19:48:55 IST" name="Suite" finished-at="2024-03-23T19:49:59 IST" duration-ms="63466">
     <groups>
     </groups>
-    <test started-at="2024-02-18T16:27:10 IST" name="Test" finished-at="2024-02-18T16:28:21 IST" duration-ms="70879">
-      <class name="com.opencart.tests.SearchTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:27:11 IST" name="beforeMethod" finished-at="2024-02-18T16:27:42 IST" duration-ms="31147" status="PASS">
+    <test started-at="2024-03-23T19:48:55 IST" name="Test" finished-at="2024-03-23T19:49:59 IST" duration-ms="63466">
+      <class name="com.opencart.tests.LoginTest">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:48:56 IST" name="beforeMethod" finished-at="2024-03-23T19:49:09 IST" duration-ms="12837" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="searchWithValidKeyword()[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:27:42 IST" name="searchWithValidKeyword" finished-at="2024-02-18T16:27:43 IST" duration-ms="1434" status="PASS">
+        <test-method signature="testLoginLinkDisplay()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:09 IST" name="testLoginLinkDisplay" finished-at="2024-03-23T19:49:09 IST" duration-ms="379" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchWithValidKeyword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:27:43 IST" name="afterMethod" finished-at="2024-02-18T16:27:44 IST" duration-ms="319" status="PASS">
+        </test-method> <!-- testLoginLinkDisplay -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:09 IST" name="afterMethod" finished-at="2024-03-23T19:49:10 IST" duration-ms="492" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:27:44 IST" name="beforeMethod" finished-at="2024-02-18T16:27:51 IST" duration-ms="7556" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:11 IST" name="beforeMethod" finished-at="2024-03-23T19:49:19 IST" duration-ms="8246" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,15 +37,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="searchForNonExistingProduct()[pri:1, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:27:51 IST" name="searchForNonExistingProduct" finished-at="2024-02-18T16:27:52 IST" duration-ms="1032" status="PASS">
+        <test-method signature="loginWithTrueEmailAndTruePassword(java.lang.String,java.lang.String)[pri:1, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:19 IST" name="loginWithTrueEmailAndTruePassword" data-provider="valid_email_password" finished-at="2024-03-23T19:49:23 IST" duration-ms="3201" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sony@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sony@123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchForNonExistingProduct -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:27:52 IST" name="afterMethod" finished-at="2024-02-18T16:27:53 IST" duration-ms="339" status="PASS">
+        </test-method> <!-- loginWithTrueEmailAndTruePassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:23 IST" name="afterMethod" finished-at="2024-03-23T19:49:23 IST" duration-ms="376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:27:53 IST" name="beforeMethod" finished-at="2024-02-18T16:28:00 IST" duration-ms="7841" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:23 IST" name="beforeMethod" finished-at="2024-03-23T19:49:32 IST" duration-ms="8589" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -56,15 +68,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="sarchWithoutProductName()[pri:2, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:28:00 IST" name="sarchWithoutProductName" finished-at="2024-02-18T16:28:01 IST" duration-ms="1009" status="PASS">
+        <test-method signature="loginWithTrueEmailAndFalsePassword(java.lang.String,java.lang.String)[pri:2, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:32 IST" name="loginWithTrueEmailAndFalsePassword" data-provider="valid_email_invalid_password" finished-at="2024-03-23T19:49:33 IST" duration-ms="1667" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sony@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sony@1234]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sarchWithoutProductName -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:28:01 IST" name="afterMethod" finished-at="2024-02-18T16:28:02 IST" duration-ms="371" status="PASS">
+        </test-method> <!-- loginWithTrueEmailAndFalsePassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:33 IST" name="afterMethod" finished-at="2024-03-23T19:49:34 IST" duration-ms="386" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:28:02 IST" name="beforeMethod" finished-at="2024-02-18T16:28:10 IST" duration-ms="7965" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:34 IST" name="beforeMethod" finished-at="2024-03-23T19:49:43 IST" duration-ms="8356" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,15 +99,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="searchWithCaseInSensitiveProductName()[pri:3, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:28:10 IST" name="searchWithCaseInSensitiveProductName" finished-at="2024-02-18T16:28:11 IST" duration-ms="1067" status="PASS">
+        <test-method signature="loginWithFalseEmailAndTruePassword(java.lang.String,java.lang.String)[pri:3, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:43 IST" name="loginWithFalseEmailAndTruePassword" data-provider="invalid_email_valid_password" finished-at="2024-03-23T19:49:46 IST" duration-ms="3768" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abc@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sony@123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchWithCaseInSensitiveProductName -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:28:11 IST" name="afterMethod" finished-at="2024-02-18T16:28:11 IST" duration-ms="301" status="PASS">
+        </test-method> <!-- loginWithFalseEmailAndTruePassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:46 IST" name="afterMethod" finished-at="2024-03-23T19:49:47 IST" duration-ms="293" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:28:11 IST" name="beforeMethod" finished-at="2024-02-18T16:28:19 IST" duration-ms="8309" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:47 IST" name="beforeMethod" finished-at="2024-03-23T19:49:55 IST" duration-ms="7949" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -94,15 +130,69 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="searchWithMultipleKeyword()[pri:4, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:28:19 IST" name="searchWithMultipleKeyword" finished-at="2024-02-18T16:28:21 IST" duration-ms="1201" status="PASS">
+        <test-method signature="loginWithFalseEmailAndFalsePassword(java.lang.String,java.lang.String)[pri:4, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:55 IST" name="loginWithFalseEmailAndFalsePassword" data-provider="invalid_email_password" finished-at="2024-03-23T19:49:58 IST" duration-ms="3154" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[xyz@yahoo.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[xyz@12345]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1577)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at com.opencart.tests.LoginTest.loginWithFalseEmailAndFalsePassword(LoginTest.java:92)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchWithMultipleKeyword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.SearchTest@43bc63a3]" started-at="2024-02-18T16:28:21 IST" name="afterMethod" finished-at="2024-02-18T16:28:21 IST" duration-ms="311" status="PASS">
+        </test-method> <!-- loginWithFalseEmailAndFalsePassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.opencart.tests.LoginTest@43bc63a3]" started-at="2024-03-23T19:49:58 IST" name="afterMethod" finished-at="2024-03-23T19:49:59 IST" duration-ms="377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.opencart.tests.SearchTest -->
+      </class> <!-- com.opencart.tests.LoginTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

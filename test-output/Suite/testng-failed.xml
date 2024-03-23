@@ -7,13 +7,13 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.opencart.tests.SearchTest">
+      <class name="com.opencart.tests.LoginTest">
         <methods>
-          <include name="afterMethod"/>
-          <include name="searchWithMultipleKeyword"/>
           <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="loginWithFalseEmailAndFalsePassword" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.opencart.tests.SearchTest -->
+      </class> <!-- com.opencart.tests.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
