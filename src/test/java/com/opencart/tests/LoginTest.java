@@ -89,6 +89,6 @@ public class LoginTest extends BaseClass {
 		String actualError = loginPage.getErrorMessage();
 		String expectedError = "Warning: No match for E-Mail Address and/or Password.";
 		boolean status = actualError.equals(expectedError);
-		Assert.assertTrue(false);
+		Assert.assertTrue(status);
 	}
 }
