@@ -1,9 +1,6 @@
 package com.opencart.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.opencart.base.BaseClass;
@@ -12,20 +9,9 @@ import com.opencart.pages.SearchPage;
 
 public class SearchTest extends BaseClass {
 
-	// pages
-	HomePage homePage;
-	SearchPage searchPage;
-
-	@Parameters("browser")
-	@BeforeMethod
-	public void beforeMethod(String browser) {
-		setupBrowser(browser);
-	}
-
-	@AfterMethod
-	public void afterMethod() {
-		quitBrowser();
-	}
+	// page instance
+	private HomePage homePage;
+	private SearchPage searchPage;
 
 	@Test(priority = 0)
 	public void searchWithValidKeyword() {

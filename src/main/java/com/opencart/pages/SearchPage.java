@@ -6,19 +6,13 @@ package com.opencart.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import com.opencart.utilities.TestUtils;
 
 /**
  * 
  */
-public class SearchPage {
+public class SearchPage extends BasePage {
 	
-	// initialize driver
-	WebDriver driver;
-	
-	// page web-elements
+	// page objects
 	@FindBy(xpath = "//img[@title='iMac']")   
 	private WebElement imacImg;
 	
@@ -33,24 +27,23 @@ public class SearchPage {
 	
 	// constructor
 	public SearchPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 	
 	// page action methods
 	public boolean verifyValidSearch() {
-		return TestUtils.performIsDispalyed(imacImg);
+		return performIsDisplay(imacImg);
 	}
 	
 	public String getSearchResultMessage() {
-		return TestUtils.getInnerText(noSearchProductMsg);
+		return performGetInnerText(noSearchProductMsg);
 	}
 	
 	public boolean verifySearchCaseInsensitiveName() {
-		return TestUtils.performIsDispalyed(iphoneImg);
+		return performIsDisplay(iphoneImg);
 	}
 	
 	public String verifySearchWithMultipleKeyword() {
-		return TestUtils.getInnerText(prdWitMultipelName); 
+		return performGetInnerText(prdWitMultipelName); 
 	}
 }

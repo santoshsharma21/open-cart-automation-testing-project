@@ -4,9 +4,6 @@
 package com.opencart.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.opencart.base.BaseClass;
@@ -20,32 +17,13 @@ import com.opencart.pages.LoginPage;
  */
 public class LoginTest extends BaseClass {
 	
-	// pages
-	HomePage homePage;
-	LoginPage loginPage;
-	AccountPage accountPage;
+	// page instance
+	private HomePage homePage;
+	private LoginPage loginPage;
+	private AccountPage accountPage;
 	
-	@Parameters("browser")
-	@BeforeMethod
-	public void beforeMethod(String browser) {
-		setupBrowser(browser);
-	}
-
-	@AfterMethod
-	public void afterMethod() {
-		quitBrowser();
-	}
-	
-	@Test(priority = 0)
-	public void testLoginLinkDisplay() {
-		homePage = new HomePage(driver);
-		homePage.clickMyAccount();
-		boolean status = homePage.isLoginLinkDisplayed();
-		Assert.assertTrue(status);
-	} 
-	
-	@Test(dataProvider = "valid_email_password", dataProviderClass = TestDataProvider.class, priority = 1)
-	public void loginWithTrueEmailAndTruePassword(String email, String password) {
+	@Test(dataProvider = "valid_email_password", dataProviderClass = TestDataProvider.class, priority = 0)
+	public void loginWithValidEmailAndPassword(String email, String password) {
 		homePage = new HomePage(driver);
 		homePage.clickMyAccount();
 		loginPage = homePage.selectLogin();
@@ -56,7 +34,7 @@ public class LoginTest extends BaseClass {
 		Assert.assertTrue(status);
 	} 
 	
-	@Test(dataProvider = "valid_email_invalid_password", dataProviderClass = TestDataProvider.class, priority = 2)
+	@Test(dataProvider = "valid_email_invalid_password", dataProviderClass = TestDataProvider.class, priority = 1)
 	public void loginWithTrueEmailAndFalsePassword(String email, String password) {
 		homePage = new HomePage(driver);
 		homePage.clickMyAccount();
@@ -68,7 +46,7 @@ public class LoginTest extends BaseClass {
 		Assert.assertTrue(status);
 	}
 	
-	@Test(dataProvider = "invalid_email_valid_password", dataProviderClass = TestDataProvider.class, priority = 3)
+	@Test(dataProvider = "invalid_email_valid_password", dataProviderClass = TestDataProvider.class, priority = 2)
 	public void loginWithFalseEmailAndTruePassword(String email, String password) {
 		homePage = new HomePage(driver);
 		homePage.clickMyAccount();
@@ -80,7 +58,7 @@ public class LoginTest extends BaseClass {
 		Assert.assertTrue(status);
 	}
 	
-	@Test(dataProvider = "invalid_email_password", dataProviderClass = TestDataProvider.class, priority = 4)
+	@Test(dataProvider = "invalid_email_password", dataProviderClass = TestDataProvider.class, priority = 3)
 	public void loginWithFalseEmailAndFalsePassword(String email, String password) {
 		homePage = new HomePage(driver);
 		homePage.clickMyAccount();

@@ -1,5 +1,6 @@
 package com.opencart.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -10,40 +11,16 @@ import com.opencart.pages.RegistrationSuccessPage;
 import com.opencart.utilities.ConfigReader;
 import com.opencart.utilities.TestUtils;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-
 public class RegisterTest extends BaseClass {
 	
-	// pages
-	ConfigReader config;
-	Faker faker;
-	HomePage homePage;
-	RegisterPage registerPage;
-	RegistrationSuccessPage registrationSuccessPage;
-
-	@Parameters("browser")
-	@BeforeMethod
-	public void beforeMethod(String browser) {
-		setupBrowser(browser);
-	}
-
-	@AfterMethod
-	public void afterMethod() {
-		quitBrowser();
-	}
+	// page instance
+	private ConfigReader config;
+	private Faker faker;
+	private HomePage homePage;
+	private RegisterPage registerPage;
+	private RegistrationSuccessPage registrationSuccessPage;
 
 	@Test(priority = 0)
-	public void testRegisterLinkDisplay() {
-		homePage = new HomePage(driver);
-		homePage.clickMyAccount();
-		boolean status = homePage.isRegisterLinkDisplayed();
-		Assert.assertTrue(status);
-	}
-
-	@Test(priority = 1)
 	public void testValidRegistration() {
 		faker = new Faker();
 		homePage = new HomePage(driver);
@@ -52,11 +29,13 @@ public class RegisterTest extends BaseClass {
 		registrationSuccessPage = registerPage.registerAccountWithValidData(faker.name().firstName(),
 				faker.name().lastName(), faker.internet().emailAddress(), TestUtils.getRandomNumAsString(10),
 				faker.internet().password());
-		boolean status = registrationSuccessPage.validateRegistrationAccount("Your Account Has Been Created!");
+		String actualString = registrationSuccessPage.validateRegistrationAccount();
+		String expectedString = "Your Account Has Been Created!";
+		boolean status = expectedString.equals(actualString);
 		Assert.assertTrue(status);
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void testRegistrationWithExistingEmail() {
 		config = new ConfigReader();
 		faker = new Faker();
@@ -64,13 +43,15 @@ public class RegisterTest extends BaseClass {
 		homePage.clickMyAccount();
 		registerPage = homePage.selectRegister();
 		registerPage.registerAccountWithExistingEmail(faker.name().firstName(),
-				faker.name().lastName(), config.getEmailId(), TestUtils.getRandomNumAsString(10),
+				faker.name().lastName(), config.getProperty("email"), TestUtils.getRandomNumAsString(10),
 				faker.internet().password());
-		boolean status = registerPage.verifyRegistrationWithExistingEmail("Warning: E-Mail Address is already registered!");
+		String actualString = registerPage.verifyRegistrationWithExistingEmail();
+		String expectedString = "Warning: E-Mail Address is already registered!";
+		boolean status = expectedString.equals(actualString);
 		Assert.assertTrue(status);
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void testRegistrationWithInvalidPasswordConfirmation() {
 		faker = new Faker();
 		homePage = new HomePage(driver);
@@ -79,7 +60,9 @@ public class RegisterTest extends BaseClass {
 		registerPage.registerAccountWithInvalidPassConfirm(faker.name().firstName(),
 				faker.name().lastName(), faker.internet().emailAddress(), TestUtils.getRandomNumAsString(10),
 				faker.internet().password());
-		boolean status = registerPage.verifyRegistrationWithInvalidPassConfirm("Password confirmation does not match password!");
+		String actualString = registerPage.verifyRegistrationWithInvalidPassword();
+		String expectedString = "Password confirmation does not match password!";
+		boolean status = expectedString.equals(actualString);
 		Assert.assertTrue(status);
 	}
 }

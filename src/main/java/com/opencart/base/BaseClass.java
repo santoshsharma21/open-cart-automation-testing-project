@@ -3,13 +3,13 @@
  */
 package com.opencart.base;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import com.opencart.utilities.ConfigReader;
 
@@ -20,37 +20,44 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  *
  */
 public class BaseClass {
-	
-	private ConfigReader cfg; 
 
 	// initialize driver
 	public static WebDriver driver;
+	
+	// ConfigReader instance
+	private ConfigReader cfg;
 
 	// setup browser
-	public void setupBrowser(String browserName) {
-		cfg = new ConfigReader();
+	@Parameters("browser")
+	@BeforeMethod
+	public void setup(String browser) {
 
-		if (browserName.equalsIgnoreCase("chrome")) {
+		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--remote-allow-origins=*");
-			driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 
-		} else if (browserName.equalsIgnoreCase("firefox")) {
+		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 
-		} else if (browserName.equalsIgnoreCase("ie")) {
+		} else if (browser.equalsIgnoreCase("ie")) {
 			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
 		}
 
+		// maximize window
 		driver.manage().window().maximize();
-		driver.get(cfg.getUrl());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		// delete cookies
+		driver.manage().deleteAllCookies();
+
+		// launch url
+		cfg = new ConfigReader();
+		driver.get(cfg.getProperty("url"));
 	}
 
-	public void quitBrowser() {
+	@AfterMethod
+	public void tearDown() {
 		driver.quit();
 	}
 }

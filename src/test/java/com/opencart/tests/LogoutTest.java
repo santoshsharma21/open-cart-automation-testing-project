@@ -4,9 +4,6 @@
 package com.opencart.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.opencart.base.BaseClass;
@@ -21,22 +18,11 @@ import com.opencart.pages.LogoutPage;
  */
 public class LogoutTest extends BaseClass {
 	
-	// pages
-	HomePage homePage;
-	LoginPage loginPage;
-	AccountPage accountPage;
-	LogoutPage logoutPage;
-	
-	@Parameters("browser")
-	@BeforeMethod
-	public void beforeMethod(String browser) {
-		setupBrowser(browser);
-	}
-
-	@AfterMethod
-	public void afterMethod() {
-		quitBrowser();
-	}
+	// page instance
+	private HomePage homePage;
+	private LoginPage loginPage;
+	private AccountPage accountPage;
+	private LogoutPage logoutPage;
 	
 	@Test(dataProvider = "valid_email_password", dataProviderClass = TestDataProvider.class, priority = 0)
 	public void validateLoginFromMyaccountOptions(String username, String password) {

@@ -6,20 +6,14 @@ package com.opencart.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import com.opencart.utilities.TestUtils;
 
 /**
  * @author Santosh Sharma
  *
  */
-public class RegisterPage {
+public class RegisterPage extends BasePage {
 
-	// initialize driver
-	WebDriver driver;
-
-	// page webelements
+	// page objects
 	@FindBy(id = "input-firstname")
 	private WebElement firstNameTxtBox;
 
@@ -52,55 +46,50 @@ public class RegisterPage {
 
 	// constructor
 	public RegisterPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 
 	// page action methods
 	public RegistrationSuccessPage registerAccountWithValidData(String fname, String lname, String email, String phone,
 			String password) {
-		TestUtils.performSendKey(firstNameTxtBox, fname);
-		TestUtils.performSendKey(lastNameTxtBox, lname);
-		TestUtils.performSendKey(emailTxtBox, email);
-		TestUtils.performSendKey(telephoneTxtBox, phone);
-		TestUtils.performSendKey(passwordTxtBox, password);
-		TestUtils.performSendKey(passwordConfirmTxtBox, password);
-		TestUtils.performClick(privacyCheckBox);
-		TestUtils.performClick(continueBtn);
+		performSendKey(firstNameTxtBox, fname);
+		performSendKey(lastNameTxtBox, lname);
+		performSendKey(emailTxtBox, email);
+		performSendKey(telephoneTxtBox, phone);
+		performSendKey(passwordTxtBox, password);
+		performSendKey(passwordConfirmTxtBox, password);
+		performClick(privacyCheckBox);
+		performClick(continueBtn);
 		return new RegistrationSuccessPage(driver);
 	}
 
 	public void registerAccountWithExistingEmail(String fname, String lname, String email, String phone, String password) {
-		TestUtils.performSendKey(firstNameTxtBox, fname);
-		TestUtils.performSendKey(lastNameTxtBox, lname);
-		TestUtils.performSendKey(emailTxtBox, email);
-		TestUtils.performSendKey(telephoneTxtBox, phone);
-		TestUtils.performSendKey(passwordTxtBox, password);
-		TestUtils.performSendKey(passwordConfirmTxtBox, password);
-		TestUtils.performClick(privacyCheckBox);
-		TestUtils.performClick(continueBtn);
+		performSendKey(firstNameTxtBox, fname);
+		performSendKey(lastNameTxtBox, lname);
+		performSendKey(emailTxtBox, email);
+		performSendKey(telephoneTxtBox, phone);
+		performSendKey(passwordTxtBox, password);
+		performSendKey(passwordConfirmTxtBox, password);
+		performClick(privacyCheckBox);
+		performClick(continueBtn);
 	}
 	
 	public void registerAccountWithInvalidPassConfirm(String fname, String lname, String email, String phone, String password) {
-		TestUtils.performSendKey(firstNameTxtBox, fname);
-		TestUtils.performSendKey(lastNameTxtBox, lname);
-		TestUtils.performSendKey(emailTxtBox, email);
-		TestUtils.performSendKey(telephoneTxtBox, phone);
-		TestUtils.performSendKey(passwordTxtBox, password);
-		TestUtils.performSendKey(passwordConfirmTxtBox, password + "s");
-		TestUtils.performClick(privacyCheckBox);
-		TestUtils.performClick(continueBtn);
+		performSendKey(firstNameTxtBox, fname);
+		performSendKey(lastNameTxtBox, lname);
+		performSendKey(emailTxtBox, email);
+		performSendKey(telephoneTxtBox, phone);
+		performSendKey(passwordTxtBox, password);
+		performSendKey(passwordConfirmTxtBox, password + "s");
+		performClick(privacyCheckBox);
+		performClick(continueBtn);
 	}
 
-	public boolean verifyRegistrationWithExistingEmail(String expectedStr) {
-		String actualStr = WarningMsg.getText();
-		boolean status = actualStr.equalsIgnoreCase(expectedStr);
-		return status;
+	public String verifyRegistrationWithExistingEmail() {
+		return performGetInnerText(WarningMsg);
 	}
 
-	public boolean verifyRegistrationWithInvalidPassConfirm(String expectedStr) {
-		String actualStr = errorMsg.getText();
-		boolean status = actualStr.equalsIgnoreCase(expectedStr);
-		return status;
+	public String verifyRegistrationWithInvalidPassword() {
+		return performGetInnerText(errorMsg);
 	}
 }

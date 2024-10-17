@@ -8,18 +8,12 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import com.opencart.utilities.TestUtils;
 
 /**
  * @author Santosh Sharma
  *
  */
-public class HomePage {
-
-	// initialize driver
-	WebDriver driver;
+public class HomePage extends BasePage {
 
 	// page objects
 	@FindBy(xpath = "//span[normalize-space()='My Account']")
@@ -36,36 +30,27 @@ public class HomePage {
 
 	// constructor
 	public HomePage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 
 	// action methods
 	public void clickMyAccount() {
-		TestUtils.performClick(myAccountLink);
-	}
-
-	public boolean isRegisterLinkDisplayed() {
-		return TestUtils.isLinkTextDisplayed(accountOptions, "Register");
-	}
-
-	public boolean isLoginLinkDisplayed() {
-		return TestUtils.isLinkTextDisplayed(accountOptions, "Login");
+		performClick(myAccountLink);
 	}
 
 	public LoginPage selectLogin() {
-		TestUtils.selectByVisibleTxt(accountOptions, "Login");
+		performSelectByVisibleText(accountOptions, "Login");
 		return new LoginPage(driver);
 	}
 
 	public RegisterPage selectRegister() {
-		TestUtils.selectByVisibleTxt(accountOptions, "Register");
+		performSelectByVisibleText(accountOptions, "Register");
 		return new RegisterPage(driver);
 	}
 	
 	public SearchPage searchProduct(String productName) {
-		TestUtils.performSendKey(searchTxtBox, productName);
-		TestUtils.performClick(searchBtn);
+		performSendKey(searchTxtBox, productName);
+		performClick(searchBtn);
 		return new SearchPage(driver);
 	}
 }

@@ -13,29 +13,21 @@ import java.util.Properties;
  */
 public class ConfigReader {
 
-	private Properties pro;
+	private Properties properties;
 
 	// constructor
 	public ConfigReader() {
-		File file = new File(System.getProperty("user.dir") + "/configurations/config.properties");
+		File file = new File(System.getProperty("user.dir") + "/src/test/resources/config/config.properties");
 		try {
 			FileInputStream inpuStream = new FileInputStream(file);
-			pro = new Properties();
-			pro.load(inpuStream);
+			properties = new Properties();
+			properties.load(inpuStream);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public String getUrl() {
-		return pro.getProperty("url");
-	}
-
-	public String getEmailId() {
-		return pro.getProperty("email");
-	}
-
-	public String getPassword() {
-		return pro.getProperty("password");
+	public String getProperty(String key) {
+		return properties.getProperty(key);
 	}
 }

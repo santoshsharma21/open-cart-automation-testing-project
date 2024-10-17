@@ -8,20 +8,14 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import com.opencart.utilities.TestUtils;
 
 
 /**
  * @author Santosh Sharma
  *
  */
-public class AccountPage {
+public class AccountPage extends BasePage {
 	
-	// initialize driver
-	WebDriver driver;
-
 	// page objects
 	@FindBy(xpath = "//a[@class='list-group-item'][normalize-space()='Logout']")
 	private WebElement logoutLinkTxt;
@@ -34,26 +28,25 @@ public class AccountPage {
 	
 	// constructor
 	public AccountPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 	
-	// action methods
+	// page action methods
 	public String getUrl() {
-		return driver.getCurrentUrl();
+		return performGetCurrentPageUrl(driver);
 	}
 	
 	public void clickMyAccountOptions() {
-		TestUtils.performClick(MyAccountLinktxt);
+		performClick(MyAccountLinktxt);
 	}
 	
 	public LogoutPage performLogoutFromColumnOpt() {
-		TestUtils.performClick(logoutLinkTxt);
+		performClick(logoutLinkTxt);
 		return new LogoutPage(driver);
 	}
 	
 	public LogoutPage performLogoutFromMyAccountOpt() {
-		TestUtils.selectByVisibleTxt(MyAccountOptions, "Logout");
+		performSelectByVisibleText(MyAccountOptions, "Logout");
 		return new LogoutPage(driver);
 	}
 }
